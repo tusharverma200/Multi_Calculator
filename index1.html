@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+</head>
+<style>
+    *{
+    /* user-select: none; */
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    place-items: center;
+    background-image: url('img2.jpg ')   ;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+.container
+{
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(214, 202, 202, 0.05);
+    height: 52vh;
+    width: 28vw;
+    background: radial-gradient(at center, rgba(214, 202, 202, 0.05), rgba(224, 217, 217, 0.5));
+    margin-top: 20px;
+}
+
+.container h1
+{
+    margin: 10px;
+    background-color: black;
+    color: white;
+}
+.inpSection{
+
+    margin: 20px 50px;
+    text-align: left;
+}
+input{
+    color: rgba(51, 45, 45, 0.5);
+    font-weight: 650;
+    outline: none;
+    border: none;
+    box-shadow: 0 2px 4px rgba(214, 202, 202, 0.05);
+    font-size: 18px;
+    padding: 15px;
+    height: 35px;
+    margin: 10px;
+    display: flex;
+    width: 20vw;
+}
+.button button{
+    padding: 10px;
+    margin: 30px 110px;
+    font-size: 18px;
+    font-weight: 650;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(224, 217, 217, 0.5);
+    border-radius: 5px;
+   
+}
+.result{
+    position: relative;
+    margin: 20px 0;
+}
+label{
+    font-weight: 600;
+  
+}
+
+h3{
+    font-size: 20px;
+}
+</style>
+
+
+<body>
+
+    <div class="topnav">
+        <a  href="simple_calc.html">Calculator</a>
+        <a class="active" href="simple_interest.html">Simple Interest Calculator</a>
+        <a href="compound.html">Compound Interest Calculator</a>
+        
+      </div>
+
+    <div class="container">
+        <h1>Simple Interest Calculator</h1>
+        <div class="inpSection">
+            <div class="amt">
+                <label for="amount">Enter Total Amount:   </label>
+                <input type="number" name="amount" id="amount" placeholder="Enter Total Amount">
+            </div>
+            <div class="time">
+                <label for="time">Enter Time:   </label>
+                <input type="number" name="time" id="time" placeholder="Enter Time">
+            </div>
+            <div class="rate">
+                <label for="rate">Rate: </label>
+                <input type="number" name="rate" id="rate" placeholder="Enter Rate">
+            </div>
+            <div class="button">
+                <button onclick="Calculate()">Calculate</button>
+            </div>
+            <div class="result">
+                <h3 id="si"></h3>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+ function Calculate()
+    {
+        let p=document.getElementById('amount').value;
+        let t=document.getElementById('time').value;
+        let r=document.getElementById('rate').value;
+
+        let  SI=(p*t*r)/100;
+
+        document.getElementById('si').innerHTML="The Total Simple Interest Is: "+SI;
+    }
+</script>
+</body>
+</html>
